@@ -16,45 +16,45 @@ function App() {
   const [nameSlogan, setNameSLogan] = useState("Diseños exclusivos");
   const handleChangeSlogan = (ev) => {
     setNameSLogan(ev.target.value);
-    console.log(nameSlogan);
+    
   }
 
   const [nameRepository, setNameRepository] = useState("");
   const handleChangeRepository = (ev) => {
     setNameRepository(ev.target.value);
-    console.log(nameRepository);
+    
   }
 
   const [nameDemo, setNameDemo] = useState("");
   const handleChangeDemo = (ev) => {
     setNameDemo(ev.target.value);
-    console.log(nameDemo);
+    
     }
 
   const [nameTechnologies, setNameTechnologies] = useState("React JS - HTML CSS");
   const handleChangeTechnologies = (ev) => {
     setNameTechnologies(ev.target.value);
-    console.log(nameTechnologies);
+    
   }
 
   const [nameDescription, setNameDescription] = useState("Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias eaque accusamus consectetur perferendis quos necessitatibus maxime libero unde voluptatum totam ipsum deleniti, placeat consequatur tempore adipisci quia natus fugiat?");
   const handleChangeDescription = (ev) => {
     setNameDescription(ev.target.value);
-    console.log(nameDescription);
+    
   }
 
   const [nameUser, setNameUser] = useState("Rodolfa Agostina");
   const handleChangeUser = (ev) => { 
     setNameUser(ev.target.value);
-    console.log(nameUser);
+    
   }
 
   const [nameJob, setNameJob] = useState("Full Stack Developer");
   const handleChangeJob = (ev) => {
     setNameJob(ev.target.value);
   }
-
-  const [projectImage, setProjectImage] = useState("../images/ebook-example.jpg");
+  //url de la imagen mal
+  const [projectImage, setProjectImage] = useState("./images/ebook-example.jpg");
   const handleClickProjectImage = (ev) => {
     setProjectImage(ev.target);
     console.log(projectImage);
