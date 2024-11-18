@@ -54,10 +54,10 @@ function App() {
     setNameJob(ev.target.value);
   }
   //url de la imagen mal
-  const [projectImage, setProjectImage] = useState("./images/ebook-example.jpg");
+  const [projectImage, setProjectImage] = useState("");
   const handleClickProjectImage = (ev) => {
     setProjectImage(ev.target);
-    console.log(projectImage);
+    //console.log(projectImage);
   }
 
   return (
@@ -75,7 +75,7 @@ function App() {
   </section>
 
   <section className="preview">
-    <div className="projectImage"></div>
+    <div className="projectImage">{projectImage}</div>
     <article className="card">
       <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
