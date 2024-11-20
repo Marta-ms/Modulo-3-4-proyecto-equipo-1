@@ -4,7 +4,7 @@
         <section className="preview">
     <div className="projectImage">{props.projectImage}</div>
     <article className="card">
-      <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
+      <h2 className="card__projectTitle"><span className="card__projectTitle--text">{props.titlePreview}</span></h2>
 
       <div className="card__author">
         <div className="card__authorPhoto"></div>

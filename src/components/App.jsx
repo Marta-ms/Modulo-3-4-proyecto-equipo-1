@@ -15,7 +15,7 @@ function App(props) {
   
   const handleChangeProyect = (value) => {
     setNameProyect(value);
-    console.log("HOla");
+    console.log(value);
   }
 
   const [nameSlogan, setNameSLogan] = useState("Diseños exclusivos");
@@ -71,7 +71,7 @@ function App(props) {
 <div className="container">
 
       <Header />
-      <Main onChangeTitle={handleChangeProyect}/>
+      <Main onChangeTitle={handleChangeProyect} titlePreview={nameProyect}/>
       <Footer />
 
 </div>

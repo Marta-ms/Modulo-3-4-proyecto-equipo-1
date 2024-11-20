@@ -3,6 +3,8 @@ import Form from "./Form";
 
 
 function Main(props) {
+  
+ console.log(props.titlePreview);
   return (
     <main className="main">
     <section className="hero">
@@ -10,8 +12,8 @@ function Main(props) {
     <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
     <a className="button--link" href="./">Ver proyectos</a>
     </section>
-    <Preview/>
-    <Form onChangeTitle={props.onChangeTitle}/>
+    <Preview titlePreview={props.titlePreview}/>
+    <Form onChangeTitle={props.onChangeTitle} />
     </main>
     
   )
