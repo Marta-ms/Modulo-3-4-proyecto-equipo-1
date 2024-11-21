@@ -68,13 +68,13 @@ function App(props) {
   return (
     
     <>
-<div className="container">
+    <div className="container">
 
       <Header />
       <Main onChangeTitle={handleChangeProyect} titlePreview={nameProyect}/>
       <Footer />
 
-</div>
+    </div>
     </>
 
   )
