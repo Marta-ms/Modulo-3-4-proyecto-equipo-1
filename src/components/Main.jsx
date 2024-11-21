@@ -1,22 +1,29 @@
 import Preview from "./Preview";
 import Form from "./Form";
 
-
 function Main(props) {
-  
- console.log(props.titlePreview);
+  console.log(props.titlePreview);
   return (
     <main className="main">
-    <section className="hero">
-    <h2 className="title">Proyectos molones</h2>
-    <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
-    <a className="button--link" href="./">Ver proyectos</a>
-    </section>
-    <Preview titlePreview={props.titlePreview}/>
-    <Form onChangeTitle={props.onChangeTitle} onChangeSlogan={props.onChangeSlogan} />
+      <section className="hero">
+        <h2 className="title">Proyectos molones</h2>
+        <p className="hero__text">
+          Escaparate en línea para recoger ideas a través de la tecnología
+        </p>
+        <a className="button--link" href="./">
+          Ver proyectos
+        </a>
+      </section>
+      <Preview
+        titlePreview={props.titlePreview}
+        sloganPreview={props.sloganPreview}
+      />
+      <Form
+        onChangeTitle={props.onChangeTitle}
+        onChangeSlogan={props.onChangeSlogan}
+      />
     </main>
-    
-  )
+  );
 }
 
 export default Main;
