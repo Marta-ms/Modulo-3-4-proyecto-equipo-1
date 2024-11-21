@@ -7,9 +7,9 @@ import Main from "./Main";
 
 function App(props) {
 
-  const handleChangevalueInput = (valueInput) => {
-    console.log(valueInput);
-  }
+  //  const handleChangevalueInput = (valueInput) => {
+  //    console.log(valueInput);
+  //  }
 
   const [nameProyect, setNameProyect] = useState("Elegant Work Space");
   
@@ -18,9 +18,14 @@ function App(props) {
     console.log(value);
   }
 
+
+
+
+
   const [nameSlogan, setNameSLogan] = useState("Diseños exclusivos");
-  const handleChangeSlogan = (ev) => {
-    setNameSLogan(ev.target.value);
+  const handleChangeSlogan = (value) => {
+    setNameSLogan(value);
+    console.log(value);
     
   }
 

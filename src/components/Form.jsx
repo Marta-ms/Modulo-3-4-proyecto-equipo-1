@@ -3,13 +3,18 @@ function Form (props){
     const handleChangeNameProyect = (event) => {
         props.onChangeTitle(event.target.value);
     }
+
+    const handleChangeSlogan = (event) => {
+      props.onChangeSlogan(event.target.value);
+      
+    }
     return(
         <form className="addForm">
     <h2 className="title">Información</h2>
     <fieldset className="addForm__group">
       <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
       <input onChange={handleChangeNameProyect} className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del proyecto"/>
-      <input onChange={props.handleChangeSlogan} className="addForm__input" type="text" name="slogan" id="slogan" placeholder="Slogan"/>
+      <input onChange={handleChangeSlogan} className="addForm__input" type="text" name="slogan" id="slogan" placeholder="Slogan"/>
       <div className="addForm__2col">
         <input onChange={props.handleChangeRepository} className="addForm__input" type="url" name="repo" id="repo" placeholder="Repositorio"/>
         <input onChange={props.handleChangeDemo} className="addForm__input" type="url" name="demo" id="demo" placeholder="Demo"/>

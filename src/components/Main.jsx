@@ -13,7 +13,7 @@ function Main(props) {
     <a className="button--link" href="./">Ver proyectos</a>
     </section>
     <Preview titlePreview={props.titlePreview}/>
-    <Form onChangeTitle={props.onChangeTitle} />
+    <Form onChangeTitle={props.onChangeTitle} onChangeSlogan={props.onChangeSlogan} />
     </main>
     
   )
