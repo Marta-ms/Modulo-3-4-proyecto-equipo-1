@@ -19,28 +19,31 @@ function App(props) {
   };
 
   const [nameRepository, setNameRepository] = useState("");
-  const handleChangeRepository = (ev) => {
-    setNameRepository(ev.target.value);
+  const handleChangeRepository = (value) => {
+    setNameRepository(value);
+    console.log(value);
   };
 
-  const [nameDemo, setNameDemo] = useState("");
-  const handleChangeDemo = (ev) => {
-    setNameDemo(ev.target.value);
+  const [nameDemo, setNameDemo] = useState ("");
+  const handleChangeDemo = (value) => {
+    setNameDemo(value);
+    console.log(value);
   };
 
-  const [nameTechnologies, setNameTechnologies] = useState(
-    "React JS - HTML CSS"
-  );
-  const handleChangeTechnologies = (ev) => {
-    setNameTechnologies(ev.target.value);
+  const [nameTechnologies, setNameTechnologies] = useState("React JS - HTML CSS");
+  const handleChangeTechnologies = (value) => {
+    setNameTechnologies(value);
+    console.log(value);
   };
 
   const [nameDescription, setNameDescription] = useState(
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex alias eaque accusamus consectetur perferendis quos necessitatibus maxime libero unde voluptatum totam ipsum deleniti, placeat consequatur tempore adipisci quia natus fugiat?"
   );
-  const handleChangeDescription = (ev) => {
-    setNameDescription(ev.target.value);
+  const handleChangeDescription = (value) => {
+    setNameDescription(value);
+    console.log(value);
   };
+  
 
   const [nameUser, setNameUser] = useState("Rodolfa Agostina");
   const handleChangeUser = (ev) => {
@@ -63,10 +66,21 @@ function App(props) {
       <div className="container">
         <Header />
         <Main
+          
           onChangeTitle={handleChangeProyect}
           onChangeSlogan={handleChangeSlogan}
+          onChangeRepository={handleChangeRepository}
+          onChangeDemo={handleChangeDemo}
+          onChangeTechnologies={handleChangeTechnologies}
+          onChangeDescription={handleChangeDescription}
           titlePreview={nameProyect}
           sloganPreview={nameSlogan}
+          repositoryPreview={nameRepository}
+          demoPreview={nameDemo}
+          technologiesPreview={nameTechnologies}
+          descriptionPreview={nameDescription}
+
+
         />
         <Footer />
       </div>

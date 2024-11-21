@@ -17,10 +17,18 @@ function Main(props) {
       <Preview
         titlePreview={props.titlePreview}
         sloganPreview={props.sloganPreview}
+        repositoryPreview={props.repositoryPreview}
+        demoPreview={props.demoPreview}
+        technologiesPreview={props.technologiesPreview}
+        descriptionPreview={props.descriptionPreview}
       />
       <Form
         onChangeTitle={props.onChangeTitle}
         onChangeSlogan={props.onChangeSlogan}
+        onChangeRepository={props.onChangeRepository}
+        onChangeDemo={props.onChangeDemo}
+        onChangeTechnologies={props.onChangeTechnologies}
+        onChangeDescription={props.onChangeDescription}
       />
     </main>
   );

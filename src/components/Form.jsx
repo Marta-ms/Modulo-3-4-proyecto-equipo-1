@@ -6,6 +6,26 @@ function Form(props) {
   const handleChangeSlogan = (event) => {
     props.onChangeSlogan(event.target.value);
   };
+
+  const handleChangeRepositoryUrl = (event) => {
+    props.onChangeRepository(event.target.value);
+  };
+
+  const handleChangeDemoIcon = (event) => {
+    props.onChangeDemo(event.target.value);
+  };
+
+   const handleChangeTechno = (event) => {
+    props.onChangeTechnologies(event.target.value);
+  };
+
+     const handleChangeDescriptionText = (event) => {
+    props.onChangeDescription(event.target.value);
+  };
+
+
+   
+
   return (
     <form className="addForm">
       <h2 className="title">Información</h2>
@@ -29,7 +49,7 @@ function Form(props) {
         />
         <div className="addForm__2col">
           <input
-            onChange={props.handleChangeRepository}
+            onChange={handleChangeRepositoryUrl}
             className="addForm__input"
             type="url"
             name="repo"
@@ -37,7 +57,7 @@ function Form(props) {
             placeholder="Repositorio"
           />
           <input
-            onChange={props.handleChangeDemo}
+            onChange={handleChangeDemoIcon}
             className="addForm__input"
             type="url"
             name="demo"
@@ -46,7 +66,7 @@ function Form(props) {
           />
         </div>
         <input
-          onChange={props.handleChangeTechnologies}
+          onChange={handleChangeTechno}
           className="addForm__input"
           type="text"
           name="technologies"
@@ -54,7 +74,7 @@ function Form(props) {
           placeholder="Tecnologías"
         />
         <textarea
-          onChange={props.handleChangeDescription}
+          onChange={handleChangeDescriptionText}
           className="addForm__input"
           type="text"
           name="desc"

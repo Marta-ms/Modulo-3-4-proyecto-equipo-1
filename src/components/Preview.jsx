@@ -17,10 +17,10 @@ function Preview(props) {
           <h3 className="card__name">{props.nameProyect}</h3>
           <p className="card__slogan">{props.sloganPreview}</p>
           <h3 className="card__descriptionTitle">Product description</h3>
-          <p className="card__description">{props.nameDescription}</p>
+          <p className="card__description">{props.descriptionPreview}</p>
 
           <div className="card__technicalInfo">
-            <p className="card__technologies">{props.nameTechnologies}</p>
+            <p className="card__technologies">{props.technologiesPreview}</p>
 
             <a
               className="icon icon__www"
@@ -33,6 +33,7 @@ function Preview(props) {
               className="icon icon__github"
               href={props.nameRepository}
               title="Haz click para ver el código del proyecto"
+            
             >
               GitHub link
             </a>
