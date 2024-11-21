@@ -5,10 +5,6 @@ import Footer from "./Footer";
 import Main from "./Main";
 
 function App(props) {
-  //  const handleChangevalueInput = (valueInput) => {
-  //    console.log(valueInput);
-  //  }
-
   const [nameProyect, setNameProyect] = useState("Elegant Work Space");
 
   const handleChangeProyect = (value) => {
