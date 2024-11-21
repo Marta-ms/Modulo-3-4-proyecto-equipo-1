@@ -48,7 +48,7 @@
 
 .container {
   padding: 22px 22px 0 22px;
-  background-color: var(--color-dark);
+  background-color: rgb(131, 116, 31);
 }
 
 .header {
@@ -113,7 +113,7 @@
   aspect-ratio: 1 / 1;
   outline: solid 1px pink;
 
-  background-image: url("../images/ebook-example.jpg");
+  background-image: url("../images/Fondo-img.jpg");
   background-position: top center;
   background-size: cover;
 }
@@ -199,7 +199,7 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background-image: url("../images/avatar.jpg");
+  background-image: url("../images/perfil-usuaria.jpg");
   background-position: center;
   background-size: cover;
   margin-bottom: 0.8rem;
@@ -251,7 +251,7 @@
   background-image: radial-gradient(
     circle at 50% 50%,
     var(--color-dusk),
-    #211e2e 92%
+    #0b7258 92%
   );
 }
 
@@ -372,7 +372,7 @@
   backdrop-filter: blur(10px);
   border-style: solid;
   border-width: 1px;
-  border-image-source: linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
+  // border-image-source: linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
   border-image-slice: 1;
   border-radius: 20px;
   background-color: var(--color-dark-lilac);
