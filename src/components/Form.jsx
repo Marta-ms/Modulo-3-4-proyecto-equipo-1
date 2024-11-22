@@ -1,3 +1,5 @@
+import GetAvatar from "./GetAvatar";
+
 function Form(props) {
   const handleChangeNameProyect = (event) => {
     props.onChangeTitle(event.target.value);
@@ -15,16 +17,21 @@ function Form(props) {
     props.onChangeDemo(event.target.value);
   };
 
-   const handleChangeTechno = (event) => {
+  const handleChangeTechno = (event) => {
     props.onChangeTechnologies(event.target.value);
   };
 
-     const handleChangeDescriptionText = (event) => {
+  const handleChangeDescriptionText = (event) => {
     props.onChangeDescription(event.target.value);
   };
 
+  const handleChangePictureProyect = (event) => {
+    props.updateAvatar(event.target.value);
+  };
 
-   
+  const handleChangePictureAuthor = (event) => {
+    props.updateAvatar(event.target.value);
+  };
 
   return (
     <form className="addForm">
@@ -103,6 +110,14 @@ function Form(props) {
           placeholder="Trabajo"
         />
       </fieldset>
+      <GetAvatar
+        text="Subir foto del proyecto"
+        updateAvatar={handleChangePictureProyect}
+      />
+      <GetAvatar
+        text="Subir foto de la autora"
+        updateAvatar={handleChangePictureAuthor}
+      />
 
       <fieldset className="addForm__group--upload">
         <label htmlFor="image" className="button">

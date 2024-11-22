@@ -3,8 +3,14 @@ import "../scss/App.scss";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
+import GetAvatar from "./GetAvatar";
 
 function App(props) {
+  const [avatar, setAvatar] = useState("");
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+  };
+
   const [nameProyect, setNameProyect] = useState("Elegant Work Space");
 
   const handleChangeProyect = (value) => {
@@ -24,13 +30,15 @@ function App(props) {
     console.log(value);
   };
 
-  const [nameDemo, setNameDemo] = useState ("");
+  const [nameDemo, setNameDemo] = useState("");
   const handleChangeDemo = (value) => {
     setNameDemo(value);
     console.log(value);
   };
 
-  const [nameTechnologies, setNameTechnologies] = useState("React JS - HTML CSS");
+  const [nameTechnologies, setNameTechnologies] = useState(
+    "React JS - HTML CSS"
+  );
   const handleChangeTechnologies = (value) => {
     setNameTechnologies(value);
     console.log(value);
@@ -43,7 +51,6 @@ function App(props) {
     setNameDescription(value);
     console.log(value);
   };
-  
 
   const [nameUser, setNameUser] = useState("Rodolfa Agostina");
   const handleChangeUser = (ev) => {
@@ -66,7 +73,6 @@ function App(props) {
       <div className="container">
         <Header />
         <Main
-          
           onChangeTitle={handleChangeProyect}
           onChangeSlogan={handleChangeSlogan}
           onChangeRepository={handleChangeRepository}
@@ -79,9 +85,8 @@ function App(props) {
           demoPreview={nameDemo}
           technologiesPreview={nameTechnologies}
           descriptionPreview={nameDescription}
-
-
         />
+        <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
         <Footer />
       </div>
     </>
