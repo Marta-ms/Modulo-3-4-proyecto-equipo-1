@@ -1,8 +1,12 @@
-# React + Vite
+# **PROYECTOS MOLONES**
+## Aplicación para crear tarjetas de tus proyectos para poder presentarlos.
+## Creado por el grupo número 1 en el módulo 3 de Adalab. Las participantes son:
+## Kendal, Ángela, Marta y Kris.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Diseño responsive y muy fácil de personalizar.
 
-Currently, two official plugins are available:
+## **INSTALACIÓN**
+### Primero tienes que clonar el repositorio con git clone, para navegar por él tienes que hacer un cd para poder colocarte en la carpeta del repositiorio que acabas de clonar. Después tienes que instalar las dependencias con npm install y, por último, iniciar el servidor de desarrollo con npm start. Para abrirlo en el navegador tienes que clickar en el link que te aparece en la terminal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Estado del proyecto
+### ¡En desarrollo! Actualmente seguimos trabajando en ello.
