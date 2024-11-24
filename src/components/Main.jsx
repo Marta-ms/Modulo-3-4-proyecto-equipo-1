@@ -1,5 +1,6 @@
 import Preview from "./Preview";
 import Form from "./Form";
+import GetAvatar from "./GetAvatar";
 
 function Main(props) {
   console.log(props.titlePreview);
@@ -30,6 +31,7 @@ function Main(props) {
         onChangeTechnologies={props.onChangeTechnologies}
         onChangeDescription={props.onChangeDescription}
       />
+      <GetAvatar updateAvatar={props.updateAvatar} avatar={props.avatar} />
     </main>
   );
 }
