@@ -1,4 +1,5 @@
 import GetAvatar from "./GetAvatar";
+import { useState } from "react";
 
 function Form(props) {
   const handleChangeNameProyect = (event) => {
@@ -26,12 +27,12 @@ function Form(props) {
   };
 
   const handleChangePictureProyect = (event) => {
-    props.updateAvatar(event.target.value);
+    props.updateAvatar(event);
   };
 
   const handleChangePictureAuthor = (event) => {
     console.log("ha hecho click");
-    props.updateAvatar(event.target.value);
+    props.updateAvatar(event);
   };
 
   return (
@@ -111,18 +112,13 @@ function Form(props) {
           placeholder="Trabajo"
         />
       </fieldset>
-      <GetAvatar
-        text="Subir foto del proyecto"
-        updateAvatar={handleChangePictureProyect}
-      />
-      <GetAvatar
-        text="Subir foto de la autora"
-        updateAvatar={handleChangePictureAuthor}
-      />
 
       <fieldset className="addForm__group--upload">
         <label htmlFor="image" className="button">
-          Subir foto del proyecto
+          <GetAvatar
+            text="Subir foto del proyecto"
+            updateAvatar={handleChangePictureProyect}
+          />
         </label>
         <input
           onClick={props.handleClickProjectImage}
@@ -132,7 +128,10 @@ function Form(props) {
           id="image"
         />
         <label htmlFor="photo" className="button">
-          Subir foto de la autora
+          <GetAvatar
+            text="Subir foto de la autora"
+            updateAvatar={handleChangePictureAuthor}
+          />
         </label>
         <input
           className="addForm__hidden"

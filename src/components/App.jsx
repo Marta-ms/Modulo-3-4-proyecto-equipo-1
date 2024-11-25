@@ -3,7 +3,6 @@ import "../scss/App.scss";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
-import GetAvatar from "./GetAvatar";
 
 function App(props) {
   const [avatar, setAvatar] = useState("");
@@ -86,7 +85,7 @@ function App(props) {
           technologiesPreview={nameTechnologies}
           descriptionPreview={nameDescription}
         />
-        <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+
         <Footer />
       </div>
     </>
