@@ -1,10 +1,8 @@
 import Preview from "./Preview";
 import Form from "./Form";
 
-function Main(props, {onChangeInput}) {
+function Main({onChangeInput, formInfo } ) {
   
-
- 
   return (
     <main className="main">
       <section className="hero">
@@ -17,12 +15,14 @@ function Main(props, {onChangeInput}) {
         </a>
       </section>
       <Preview
-        titlePreview={props.titlePreview}
-        sloganPreview={props.sloganPreview}
-        repositoryPreview={props.repositoryPreview}
-        demoPreview={props.demoPreview}
-        technologiesPreview={props.technologiesPreview}
-        descriptionPreview={props.descriptionPreview}
+        personalInfo={formInfo}
+
+        // titlePreview={props.titlePreview}
+        // sloganPreview={props.sloganPreview}
+        // repositoryPreview={props.repositoryPreview}
+        // demoPreview={props.demoPreview}
+        // technologiesPreview={props.technologiesPreview}
+        // descriptionPreview={props.descriptionPreview}
       />
       <Form
         onChangeInput={onChangeInput}

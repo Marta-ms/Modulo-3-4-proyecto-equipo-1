@@ -1,8 +1,13 @@
+
+
+
 function Form({ onChangeInput }) {
   
   const handleChangeInput = (event) => {
-    onChangeInput(event.target.value);
-    console.log(event.target.value);
+     //recogemos valor de input y se pinta en la consola
+    //console.log(value);
+    onChangeInput(event.target.value, event.target.id); //value es la información que quiero enviar hacia App (la madre)
+   
   }
   
   
@@ -40,7 +45,7 @@ function Form({ onChangeInput }) {
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
         <input
           //onChangeInput={handleChangeNameProyect}
-          onChangeInputForm={handleChangeInput}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="name"
@@ -49,7 +54,7 @@ function Form({ onChangeInput }) {
         />
         <input
           //onChange={handleChangeSlogan}
-          onChangeInputForm={handleChangeInput}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="slogan"
@@ -59,7 +64,7 @@ function Form({ onChangeInput }) {
         <div className="addForm__2col">
           <input
             //onChange={handleChangeRepositoryUrl}
-            onChangeInputForm={handleChangeInput}
+            onChange={handleChangeInput}
             className="addForm__input"
             type="url"
             name="repo"
@@ -68,7 +73,7 @@ function Form({ onChangeInput }) {
           />
           <input
             //onChange={handleChangeDemoIcon}
-            onChangeInputForm={handleChangeInput}
+            onChange={handleChangeInput}
             className="addForm__input"
             type="url"
             name="demo"
@@ -78,7 +83,7 @@ function Form({ onChangeInput }) {
         </div>
         <input
           //onChange={handleChangeTechno}
-          onChangeInputForm={handleChangeInput}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="technologies"
@@ -87,7 +92,7 @@ function Form({ onChangeInput }) {
         />
         <textarea
           //onChange={handleChangeDescriptionText}
-          onChangeInputForm={handleChangeInput}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="desc"
@@ -100,7 +105,7 @@ function Form({ onChangeInput }) {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
         <input
-          //onChange={props.handleChangeUser}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="autor"
@@ -108,7 +113,7 @@ function Form({ onChangeInput }) {
           placeholder="Nombre"
         />
         <input
-          //onChange={props.handleChangeJob}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="job"

@@ -4,10 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
 
-function App(props) {
-  
-
-  
+function App() {
   
 
   const [formInfo, setFormInfo] = useState({
@@ -21,12 +18,29 @@ function App(props) {
     nameJob: "",
    })
 
-   const handleChangeInput = (value) => {
+   const handleChangeInput = (valueInput, idInput) => {
      
-     //onChangeInput();
-     setFormInfo(value);
-     console.log(value);
+  
+     console.log(idInput, valueInput);
 
+     if (idInput === "name") {
+      setFormInfo({ ...formInfo, name: valueInput})
+     } else if(idInput === "slogan"){
+      setFormInfo({ ...formInfo, slogan: valueInput})
+     } else if(idInput === "desc") {
+      setFormInfo({ ...formInfo, desc: valueInput})
+     } else if(idInput === "job") {
+      setFormInfo( {...formInfo, job: valueInput})
+     } else if(idInput === "autor") {
+      setFormInfo( {...formInfo, autor: valueInput})
+    } else if(idInput === "technologies") {
+      setFormInfo( {...formInfo, technologies: valueInput})
+    } else if(idInput === "repo") {
+      setFormInfo( {...formInfo, repo: valueInput})
+    } else if(idInput === "demo") {
+      setFormInfo( {...formInfo, demo: valueInput})
+    }
+    
 
    }
     
@@ -94,13 +108,14 @@ function App(props) {
         <Header />
         <Main
           onChangeInput={handleChangeInput}
+          formInfo={formInfo}
           // onChangeTitle={handleChangeProyect}
           // onChangeSlogan={handleChangeSlogan}
           // onChangeRepository={handleChangeRepository}
           // onChangeDemo={handleChangeDemo}
           // onChangeTechnologies={handleChangeTechnologies}
           // onChangeDescription={handleChangeDescription}
-          
+
           // titlePreview={nameProyect}
           // sloganPreview={nameSlogan}
           // repositoryPreview={nameRepository}
