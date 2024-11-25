@@ -1,8 +1,10 @@
 import Preview from "./Preview";
 import Form from "./Form";
 
-function Main(props) {
-  console.log(props.titlePreview);
+function Main(props, {onChangeInput}) {
+  
+
+ 
   return (
     <main className="main">
       <section className="hero">
@@ -23,12 +25,13 @@ function Main(props) {
         descriptionPreview={props.descriptionPreview}
       />
       <Form
-        onChangeTitle={props.onChangeTitle}
-        onChangeSlogan={props.onChangeSlogan}
-        onChangeRepository={props.onChangeRepository}
-        onChangeDemo={props.onChangeDemo}
-        onChangeTechnologies={props.onChangeTechnologies}
-        onChangeDescription={props.onChangeDescription}
+        onChangeInput={onChangeInput}
+        // onChangeTitle={props.onChangeTitle}
+        // onChangeSlogan={props.onChangeSlogan}
+        // onChangeRepository={props.onChangeRepository}
+        // onChangeDemo={props.onChangeDemo}
+        // onChangeTechnologies={props.onChangeTechnologies}
+        // onChangeDescription={props.onChangeDescription}
       />
     </main>
   );

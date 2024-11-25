@@ -1,27 +1,34 @@
-function Form(props) {
-  const handleChangeNameProyect = (event) => {
-    props.onChangeTitle(event.target.value);
-  };
+function Form({ onChangeInput }) {
+  
+  const handleChangeInput = (event) => {
+    onChangeInput(event.target.value);
+    console.log(event.target.value);
+  }
+  
+  
+  // const handleChangeNameProyect = (event) => {
+  //   onChangeInput (event.target.value);
+  // };
 
-  const handleChangeSlogan = (event) => {
-    props.onChangeSlogan(event.target.value);
-  };
+  // const handleChangeSlogan = (event) => {
+  //   props.onChangeSlogan(event.target.value);
+  // };
 
-  const handleChangeRepositoryUrl = (event) => {
-    props.onChangeRepository(event.target.value);
-  };
+  // const handleChangeRepositoryUrl = (event) => {
+  //   props.onChangeRepository(event.target.value);
+  // };
 
-  const handleChangeDemoIcon = (event) => {
-    props.onChangeDemo(event.target.value);
-  };
+  // const handleChangeDemoIcon = (event) => {
+  //   props.onChangeDemo(event.target.value);
+  // };
 
-   const handleChangeTechno = (event) => {
-    props.onChangeTechnologies(event.target.value);
-  };
+  //  const handleChangeTechno = (event) => {
+  //   props.onChangeTechnologies(event.target.value);
+  // };
 
-     const handleChangeDescriptionText = (event) => {
-    props.onChangeDescription(event.target.value);
-  };
+  //    const handleChangeDescriptionText = (event) => {
+  //   props.onChangeDescription(event.target.value);
+  // };
 
 
    
@@ -32,7 +39,8 @@ function Form(props) {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
         <input
-          onChange={handleChangeNameProyect}
+          //onChangeInput={handleChangeNameProyect}
+          onChangeInputForm={handleChangeInput}
           className="addForm__input"
           type="text"
           name="name"
@@ -40,7 +48,8 @@ function Form(props) {
           placeholder="Nombre del proyecto"
         />
         <input
-          onChange={handleChangeSlogan}
+          //onChange={handleChangeSlogan}
+          onChangeInputForm={handleChangeInput}
           className="addForm__input"
           type="text"
           name="slogan"
@@ -49,7 +58,8 @@ function Form(props) {
         />
         <div className="addForm__2col">
           <input
-            onChange={handleChangeRepositoryUrl}
+            //onChange={handleChangeRepositoryUrl}
+            onChangeInputForm={handleChangeInput}
             className="addForm__input"
             type="url"
             name="repo"
@@ -57,7 +67,8 @@ function Form(props) {
             placeholder="Repositorio"
           />
           <input
-            onChange={handleChangeDemoIcon}
+            //onChange={handleChangeDemoIcon}
+            onChangeInputForm={handleChangeInput}
             className="addForm__input"
             type="url"
             name="demo"
@@ -66,7 +77,8 @@ function Form(props) {
           />
         </div>
         <input
-          onChange={handleChangeTechno}
+          //onChange={handleChangeTechno}
+          onChangeInputForm={handleChangeInput}
           className="addForm__input"
           type="text"
           name="technologies"
@@ -74,7 +86,8 @@ function Form(props) {
           placeholder="Tecnologías"
         />
         <textarea
-          onChange={handleChangeDescriptionText}
+          //onChange={handleChangeDescriptionText}
+          onChangeInputForm={handleChangeInput}
           className="addForm__input"
           type="text"
           name="desc"
@@ -87,7 +100,7 @@ function Form(props) {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
         <input
-          onChange={props.handleChangeUser}
+          //onChange={props.handleChangeUser}
           className="addForm__input"
           type="text"
           name="autor"
@@ -95,7 +108,7 @@ function Form(props) {
           placeholder="Nombre"
         />
         <input
-          onChange={props.handleChangeJob}
+          //onChange={props.handleChangeJob}
           className="addForm__input"
           type="text"
           name="job"
@@ -109,7 +122,7 @@ function Form(props) {
           Subir foto del proyecto
         </label>
         <input
-          onClick={props.handleClickProjectImage}
+          //onClick={props.handleClickProjectImage}
           className="addForm__hidden"
           type="file"
           name="image"
