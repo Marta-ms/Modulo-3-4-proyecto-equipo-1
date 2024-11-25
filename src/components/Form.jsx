@@ -30,6 +30,7 @@ function Form(props) {
   };
 
   const handleChangePictureAuthor = (event) => {
+    console.log("ha hecho click");
     props.updateAvatar(event.target.value);
   };
 
