@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
 import imageUser from "../images/perfil-usuaria.jpg";
+import imageProject from "../images/Fondo-img.jpg";
 // import GetAvatar from "./GetAvatar";
 
 function App() {
@@ -50,13 +51,16 @@ function App() {
     backgroundImage: `url($(imageUser))`,
   });
 
-  const handleChangeImages = (ImageAuthor) => {
+  const handleChangeImageAuthor = (ImageAuthor) => {
     setFormImageAuthor(ImageAuthor);
   };
 
-  /*
-  Si el id de la imagen
-   */
+  const [formImageProject, setFormImageProject] = useState({
+    backgroundImage: `url($(imageProject))`,
+  });
+  const handleChangeProjectImage = (ImageProjectValue) => {
+    setFormImageProject(ImageProjectValue);
+  };
 
   return (
     <>
@@ -65,10 +69,11 @@ function App() {
         <Main
           onChangeInput={handleChangeInput}
           formInfo={formInfo}
-          formImages={handleChangeImages}
+          formImages={handleChangeImageAuthor}
           changeAuthorPhoto={formImageAuthor}
+          formImageProyect={handleChangeProjectImage}
+          changeProjectPhoto={formImageProject}
         />
-        {/* <GetAvatar avatar={avatar} updateAvatar={updateAvatar} /> */}
         <Footer />
       </div>
     </>

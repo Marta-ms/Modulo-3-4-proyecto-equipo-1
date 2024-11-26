@@ -1,10 +1,6 @@
 import GetAvatar from "./GetAvatar";
 
-const handleChangePictureProyect = (event) => {
-  props.updateAvatar(event);
-};
-
-function Form({ onChangeInput, formImages }) {
+function Form({ onChangeInput, formImages, formImageProyect }) {
   const handleChangeInput = (event) => {
     //recogemos valor de input y se pinta en la consola
     //console.log(value);
@@ -12,6 +8,9 @@ function Form({ onChangeInput, formImages }) {
   };
   const handleChangePictureAuthor = (event) => {
     formImages(event);
+  };
+  const handleChangePictureProyect = (event) => {
+    formImageProyect(event);
   };
 
   return (

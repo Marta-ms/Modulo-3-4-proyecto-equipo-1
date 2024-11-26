@@ -1,7 +1,14 @@
 import Preview from "./Preview";
 import Form from "./Form";
 
-function Main({ onChangeInput, formInfo, formImages, changeAuthorPhoto }) {
+function Main({
+  onChangeInput,
+  formInfo,
+  formImages,
+  changeAuthorPhoto,
+  formImageProyect,
+  changeProjectPhoto,
+}) {
   return (
     <main className="main">
       <section className="hero">
@@ -13,8 +20,16 @@ function Main({ onChangeInput, formInfo, formImages, changeAuthorPhoto }) {
           Ver proyectos
         </a>
       </section>
-      <Preview personalInfo={formInfo} changeAuthorPhoto={changeAuthorPhoto} />
-      <Form onChangeInput={onChangeInput} formImages={formImages} />
+      <Preview
+        personalInfo={formInfo}
+        changeAuthorPhoto={changeAuthorPhoto}
+        changeProjectPhoto={changeProjectPhoto}
+      />
+      <Form
+        onChangeInput={onChangeInput}
+        formImages={formImages}
+        formImageProyect={formImageProyect}
+      />
     </main>
   );
 }
