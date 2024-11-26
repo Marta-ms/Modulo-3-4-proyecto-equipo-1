@@ -97,14 +97,14 @@ function Form({ onChangeInput }) {
           placeholder="Trabajo"
         />
       </fieldset>
-      <GetAvatar
+      {/* <GetAvatar
         text="Subir foto del proyecto"
         updateAvatar={handleChangePictureProyect}
       />
       <GetAvatar
         text="Subir foto de la autora"
         updateAvatar={handleChangePictureAuthor}
-      />
+      /> */}
 
       <fieldset className="addForm__group--upload">
         <label htmlFor="image" className="button">

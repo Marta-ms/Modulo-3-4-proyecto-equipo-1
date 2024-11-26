@@ -3,7 +3,7 @@ import "../scss/App.scss";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
-import GetAvatar from "./GetAvatar";
+// import GetAvatar from "./GetAvatar";
 
 function App() {
   
@@ -61,7 +61,7 @@ function App() {
           onChangeInput={handleChangeInput}
           formInfo={formInfo} 
         />
-        <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+        {/* <GetAvatar avatar={avatar} updateAvatar={updateAvatar} /> */}
         <Footer />
       </div>
     </>
