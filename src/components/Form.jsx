@@ -11,40 +11,13 @@ function Form({ onChangeInput }) {
   }
   
   
-  // const handleChangeNameProyect = (event) => {
-  //   onChangeInput (event.target.value);
-  // };
-
-  // const handleChangeSlogan = (event) => {
-  //   props.onChangeSlogan(event.target.value);
-  // };
-
-  // const handleChangeRepositoryUrl = (event) => {
-  //   props.onChangeRepository(event.target.value);
-  // };
-
-  // const handleChangeDemoIcon = (event) => {
-  //   props.onChangeDemo(event.target.value);
-  // };
-
-  //  const handleChangeTechno = (event) => {
-  //   props.onChangeTechnologies(event.target.value);
-  // };
-
-  //    const handleChangeDescriptionText = (event) => {
-  //   props.onChangeDescription(event.target.value);
-  // };
-
-
-   
-
   return (
     <form className="addForm">
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
         <input
-          //onChangeInput={handleChangeNameProyect}
+          
           onChange={handleChangeInput}
           className="addForm__input"
           type="text"
@@ -53,7 +26,7 @@ function Form({ onChangeInput }) {
           placeholder="Nombre del proyecto"
         />
         <input
-          //onChange={handleChangeSlogan}
+  
           onChange={handleChangeInput}
           className="addForm__input"
           type="text"
@@ -63,7 +36,7 @@ function Form({ onChangeInput }) {
         />
         <div className="addForm__2col">
           <input
-            //onChange={handleChangeRepositoryUrl}
+           
             onChange={handleChangeInput}
             className="addForm__input"
             type="url"
@@ -72,7 +45,7 @@ function Form({ onChangeInput }) {
             placeholder="Repositorio"
           />
           <input
-            //onChange={handleChangeDemoIcon}
+            
             onChange={handleChangeInput}
             className="addForm__input"
             type="url"
@@ -82,7 +55,7 @@ function Form({ onChangeInput }) {
           />
         </div>
         <input
-          //onChange={handleChangeTechno}
+          
           onChange={handleChangeInput}
           className="addForm__input"
           type="text"
@@ -91,7 +64,7 @@ function Form({ onChangeInput }) {
           placeholder="Tecnologías"
         />
         <textarea
-          //onChange={handleChangeDescriptionText}
+          
           onChange={handleChangeInput}
           className="addForm__input"
           type="text"

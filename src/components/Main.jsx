@@ -14,25 +14,8 @@ function Main({onChangeInput, formInfo } ) {
           Ver proyectos
         </a>
       </section>
-      <Preview
-        personalInfo={formInfo}
-
-        // titlePreview={props.titlePreview}
-        // sloganPreview={props.sloganPreview}
-        // repositoryPreview={props.repositoryPreview}
-        // demoPreview={props.demoPreview}
-        // technologiesPreview={props.technologiesPreview}
-        // descriptionPreview={props.descriptionPreview}
-      />
-      <Form
-        onChangeInput={onChangeInput}
-        // onChangeTitle={props.onChangeTitle}
-        // onChangeSlogan={props.onChangeSlogan}
-        // onChangeRepository={props.onChangeRepository}
-        // onChangeDemo={props.onChangeDemo}
-        // onChangeTechnologies={props.onChangeTechnologies}
-        // onChangeDescription={props.onChangeDescription}
-      />
+      <Preview personalInfo={formInfo} />
+      <Form onChangeInput={onChangeInput} />
     </main>
   );
 }
