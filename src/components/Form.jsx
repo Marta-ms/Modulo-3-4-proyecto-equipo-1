@@ -1,38 +1,17 @@
 import GetAvatar from "./GetAvatar";
-import { useState } from "react";
 
-function Form(props) {
-  const handleChangeNameProyect = (event) => {
-    props.onChangeTitle(event.target.value);
+const handleChangePictureProyect = (event) => {
+  props.updateAvatar(event);
+};
+
+function Form({ onChangeInput, formImages }) {
+  const handleChangeInput = (event) => {
+    //recogemos valor de input y se pinta en la consola
+    //console.log(value);
+    onChangeInput(event.target.value, event.target.id); //value es la información que quiero enviar hacia App (la madre)
   };
-
-  const handleChangeSlogan = (event) => {
-    props.onChangeSlogan(event.target.value);
-  };
-
-  const handleChangeRepositoryUrl = (event) => {
-    props.onChangeRepository(event.target.value);
-  };
-
-  const handleChangeDemoIcon = (event) => {
-    props.onChangeDemo(event.target.value);
-  };
-
-  const handleChangeTechno = (event) => {
-    props.onChangeTechnologies(event.target.value);
-  };
-
-  const handleChangeDescriptionText = (event) => {
-    props.onChangeDescription(event.target.value);
-  };
-
-  const handleChangePictureProyect = (event) => {
-    props.updateAvatar(event);
-  };
-
   const handleChangePictureAuthor = (event) => {
-    console.log("ha hecho click");
-    props.updateAvatar(event);
+    formImages(event);
   };
 
   return (
@@ -41,7 +20,7 @@ function Form(props) {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
         <input
-          onChange={handleChangeNameProyect}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="name"
@@ -49,7 +28,7 @@ function Form(props) {
           placeholder="Nombre del proyecto"
         />
         <input
-          onChange={handleChangeSlogan}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="slogan"
@@ -58,7 +37,7 @@ function Form(props) {
         />
         <div className="addForm__2col">
           <input
-            onChange={handleChangeRepositoryUrl}
+            onChange={handleChangeInput}
             className="addForm__input"
             type="url"
             name="repo"
@@ -66,7 +45,7 @@ function Form(props) {
             placeholder="Repositorio"
           />
           <input
-            onChange={handleChangeDemoIcon}
+            onChange={handleChangeInput}
             className="addForm__input"
             type="url"
             name="demo"
@@ -75,7 +54,7 @@ function Form(props) {
           />
         </div>
         <input
-          onChange={handleChangeTechno}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="technologies"
@@ -83,7 +62,7 @@ function Form(props) {
           placeholder="Tecnologías"
         />
         <textarea
-          onChange={handleChangeDescriptionText}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="desc"
@@ -96,7 +75,7 @@ function Form(props) {
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre la autora</legend>
         <input
-          onChange={props.handleChangeUser}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="autor"
@@ -104,7 +83,7 @@ function Form(props) {
           placeholder="Nombre"
         />
         <input
-          onChange={props.handleChangeJob}
+          onChange={handleChangeInput}
           className="addForm__input"
           type="text"
           name="job"
@@ -121,7 +100,6 @@ function Form(props) {
           />
         </label>
         <input
-          onClick={props.handleClickProjectImage}
           className="addForm__hidden"
           type="file"
           name="image"

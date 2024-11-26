@@ -1,39 +1,41 @@
-function Preview(props) {
+function Preview({ personalInfo, changeAuthorPhoto }) {
   return (
     <section className="preview">
-      <div className="projectImage">{props.projectImage}</div>
+      <div className="projectImage">{/* */}</div>
       <article className="card">
         <h2 className="card__projectTitle">
-          <span className="card__projectTitle--text">{props.titlePreview}</span>
+          <span className="card__projectTitle--text">Nombre de proyecto</span>
         </h2>
 
         <div className="card__author">
-          <div className="card__authorPhoto"></div>
-          <p className="card__job">{props.nameJob}</p>
-          <h3 className="card__name">{props.nameUser}</h3>
+          <div
+            className="card__authorPhoto"
+            style={{ backgroundImage: `url(${changeAuthorPhoto})` }}
+          ></div>
+          <h3 className="card__name">{personalInfo.autor}</h3>
+          <p className="card__job">{personalInfo.job}</p>
         </div>
 
         <div className="card__project">
-          <h3 className="card__name">{props.nameProyect}</h3>
-          <p className="card__slogan">{props.sloganPreview}</p>
+          <h3 className="card__name">{personalInfo.name}</h3>
+          <p className="card__slogan">{personalInfo.slogan}</p>
           <h3 className="card__descriptionTitle">Product description</h3>
-          <p className="card__description">{props.descriptionPreview}</p>
+          <p className="card__description">{personalInfo.desc}</p>
 
           <div className="card__technicalInfo">
-            <p className="card__technologies">{props.technologiesPreview}</p>
+            <p className="card__technologies">{personalInfo.technologies}</p>
 
             <a
               className="icon icon__www"
-              href={props.nameDemo}
+              href={personalInfo.demo}
               title="Haz click para ver el proyecto online"
             >
               Web link
             </a>
             <a
               className="icon icon__github"
-              href={props.nameRepository}
+              href={personalInfo.repo}
               title="Haz click para ver el código del proyecto"
-            
             >
               GitHub link
             </a>
