@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import imageUser from "../images/perfil-usuaria.jpg";
 import imageProject from "../images/Fondo-img.jpg";
-// import GetAvatar from "./GetAvatar";
+import postCardToApi from "../services/postCardToApi";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
@@ -17,9 +17,18 @@ function App() {
     description: "",
     nameUser: "",
     nameJob: "",
+    photoAuthor: "",
+    photoProject: "",
   });
+  console.log(formInfo);
 
-  const handleChangeInput = (valueInput, idInput) => {
+  const handleChangeInput = (
+    valueInput,
+    idInput,
+    idImages,
+    ImageAuthor,
+    ImageProjectValue
+  ) => {
     console.log(idInput, valueInput);
 
     if (idInput === "name") {
@@ -38,27 +47,22 @@ function App() {
       setFormInfo({ ...formInfo, repo: valueInput });
     } else if (idInput === "demo") {
       setFormInfo({ ...formInfo, demo: valueInput });
+    } else if (idImages === "photo") {
+      setFormInfo({ ...formInfo, photoAuthor: ImageAuthor });
     }
   };
-
-  // //url de la imagen mal
-  // const [projectImage, setProjectImage] = useState("");
-  // const handleClickProjectImage = (ev) => {
-  //   setProjectImage(ev.target);
-  //   //console.log(projectImage);
-  // };
+  const handleChangeImageAuthor = (ImageAuthor, idImages) => {
+    console.log(ImageAuthor);
+    setFormImageAuthor(ImageAuthor);
+  };
   const [formImageAuthor, setFormImageAuthor] = useState({
     backgroundImage: `url($(imageUser))`,
   });
 
-  const handleChangeImageAuthor = (ImageAuthor) => {
-    setFormImageAuthor(ImageAuthor);
-  };
-
   const [formImageProject, setFormImageProject] = useState({
     backgroundImage: `url($(imageProject))`,
   });
-  const handleChangeProjectImage = (ImageProjectValue) => {
+  const handleChangeProjectImage = (ImageProjectValue, idImages) => {
     setFormImageProject(ImageProjectValue);
   };
 

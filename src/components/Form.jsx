@@ -2,6 +2,7 @@ import GetAvatar from "./GetAvatar";
 
 function Form({ onChangeInput, formImages, formImageProyect }) {
   const handleChangeInput = (event) => {
+    console.log(event.target.id);
     //recogemos valor de input y se pinta en la consola
     //console.log(value);
     onChangeInput(event.target.value, event.target.id); //value es la información que quiero enviar hacia App (la madre)
@@ -11,6 +12,10 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
   };
   const handleChangePictureProyect = (event) => {
     formImageProyect(event);
+  };
+  const handleSaveProject = (ev) => {
+    ev.preventDefault();
+    console.log("ei");
   };
 
   return (
@@ -99,6 +104,7 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
           />
         </label>
         <input
+          onChange={handleChangeInput}
           className="addForm__hidden"
           type="file"
           name="image"
@@ -107,16 +113,20 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
         <label htmlFor="photo" className="button">
           <GetAvatar
             text="Subir foto de la autora"
+            id="photo"
             updateAvatar={handleChangePictureAuthor}
           />
         </label>
         <input
+          onChange={handleChangeInput}
           className="addForm__hidden"
           type="file"
           name="photo"
           id="photo"
         />
-        <button className="button--large">Guardar proyecto</button>
+        <button onClick={handleSaveProject} className="button--large">
+          Guardar proyecto
+        </button>
       </fieldset>
     </form>
   );
