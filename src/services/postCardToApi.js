@@ -1,17 +1,18 @@
-const postCardToApi = () => {
-    fetch("https://dev.adalab.es/api/projectCard", {
+const postCardToApi = (formInfo, setDataApi) => {
+    return fetch("https://dev.adalab.es/api/projectCard", {
         method: "POST",
         body: JSON.stringify(formInfo),
         headers: {
             "Content-Type": "application/json"
         },
     })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            return (
+                setDataApi(data.cardURL)
 
-            //codigo con el que manejar/modificar data
-
+            )
 
         })
 };
