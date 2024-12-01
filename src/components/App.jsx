@@ -47,21 +47,22 @@ function App() {
       setFormInfo({ ...formInfo, photo: valueInput });
     }
   };
-  const handleChangeImageAuthor = (ImageAuthor, idImages) => {
-    console.log(ImageAuthor, idImages);
-    setFormImageAuthor(ImageAuthor);
-  };
-  const [formImageAuthor, setFormImageAuthor] = useState({
-    backgroundImage: `url($(imageUser))`,
-  });
 
-  const [formImageProject, setFormImageProject] = useState({
-    backgroundImage: `url($(imageProject))`,
-  });
-  const handleChangeProjectImage = (ImageProjectValue, idImages) => {
-    console.log(ImageProjectValue, idImages);
-    setFormImageProject(ImageProjectValue);
-  };
+  // const handleChangeImageAuthor = (ImageAuthor, idImages) => {
+  //   console.log(ImageAuthor, idImages);
+  //   setFormImageAuthor(ImageAuthor);
+  // };
+  // const [formImageAuthor, setFormImageAuthor] = useState({
+  //   backgroundImage: `url($(imageUser))`,
+  // });
+
+  // const [formImageProject, setFormImageProject] = useState({
+  //   backgroundImage: `url($(imageProject))`,
+  // });
+  // const handleChangeProjectImage = (ImageProjectValue, idImages) => {
+  //   console.log(ImageProjectValue, idImages);
+  //   setFormImageProject(ImageProjectValue);
+  // };
 
   const [dataApi, setDataApi] = useState("");
   const postCardToApi = (formInfo) => {
@@ -86,10 +87,6 @@ function App() {
         <Main
           onChangeInput={handleChangeInput}
           formInfo={formInfo}
-          formImages={handleChangeImageAuthor}
-          changeAuthorPhoto={formImageAuthor}
-          formImageProyect={handleChangeProjectImage}
-          changeProjectPhoto={formImageProject}
           postCardToApi={postCardToApi}
           dataApi={dataApi}
         />

@@ -1,29 +1,21 @@
 // import postCardToApi from "../services/postCardToApi";
 import GetAvatar from "./GetAvatar";
 
-function Form({
-  onChangeInput,
-  formImages,
-  formImageProyect,
-  formInfo,
-  postCardToApi,
-  dataApi,
-}) {
+function Form({ onChangeInput, formInfo, postCardToApi, dataApi }) {
   const handleChangeInput = (event) => {
     console.log(event.target.id);
-    //recogemos valor de input y se pinta en la consola
-    //console.log(value);
     onChangeInput(event.target.value, event.target.id); //value es la información que quiero enviar hacia App (la madre)
   };
-  const handleChangePictureAuthor = (event) => {
-    formImages(event, "photo");
-  };
-  const handleChangePictureProyect = (event) => {
-    formImageProyect(event, "image");
-  };
+
   const handleSaveProject = (ev) => {
     ev.preventDefault();
     postCardToApi(formInfo);
+  };
+  const formImages = (event) => {
+    onChangeInput(event, "photo");
+  };
+  const formImageProyect = (event) => {
+    onChangeInput(event, "image");
   };
 
   return (
@@ -109,11 +101,11 @@ function Form({
           <GetAvatar
             text="Subir foto del proyecto"
             id="image"
-            updateAvatar={handleChangePictureProyect}
+            updateAvatar={formImageProyect}
           />
         </label>
         <input
-          onChange={handleChangeInput}
+          onChange={formImageProyect}
           className="addForm__hidden"
           type="file"
           name="image"
@@ -123,11 +115,11 @@ function Form({
           <GetAvatar
             text="Subir foto de la autora"
             id="photo"
-            updateAvatar={handleChangePictureAuthor}
+            updateAvatar={formImages}
           />
         </label>
         <input
-          onChange={handleChangeInput}
+          onChange={formImages}
           className="addForm__hidden"
           type="file"
           name="photo"
@@ -136,7 +128,8 @@ function Form({
         <button onClick={handleSaveProject} className="button--large">
           Guardar proyecto
         </button>
-        <a href={dataApi}>Enlace a tu proyecto</a>
+
+        <a href={dataApi}>{dataApi && <p>Enlace a tu proyecto</p>}</a>
       </fieldset>
     </form>
   );

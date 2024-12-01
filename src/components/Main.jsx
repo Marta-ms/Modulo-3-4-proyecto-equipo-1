@@ -24,8 +24,8 @@ function Main({
       </section>
       <Preview
         personalInfo={formInfo}
-        changeAuthorPhoto={changeAuthorPhoto}
-        changeProjectPhoto={changeProjectPhoto}
+        // changeAuthorPhoto={changeAuthorPhoto}
+        // changeProjectPhoto={changeProjectPhoto}
       />
       <Form
         onChangeInput={onChangeInput}
