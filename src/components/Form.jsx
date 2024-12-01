@@ -1,6 +1,14 @@
+// import postCardToApi from "../services/postCardToApi";
 import GetAvatar from "./GetAvatar";
 
-function Form({ onChangeInput, formImages, formImageProyect }) {
+function Form({
+  onChangeInput,
+  formImages,
+  formImageProyect,
+  formInfo,
+  postCardToApi,
+  dataApi,
+}) {
   const handleChangeInput = (event) => {
     console.log(event.target.id);
     //recogemos valor de input y se pinta en la consola
@@ -8,14 +16,14 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
     onChangeInput(event.target.value, event.target.id); //value es la información que quiero enviar hacia App (la madre)
   };
   const handleChangePictureAuthor = (event) => {
-    formImages(event);
+    formImages(event, "photo");
   };
   const handleChangePictureProyect = (event) => {
-    formImageProyect(event);
+    formImageProyect(event, "image");
   };
   const handleSaveProject = (ev) => {
     ev.preventDefault();
-    console.log("ei");
+    postCardToApi(formInfo);
   };
 
   return (
@@ -100,6 +108,7 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
         <label htmlFor="image" className="button">
           <GetAvatar
             text="Subir foto del proyecto"
+            id="image"
             updateAvatar={handleChangePictureProyect}
           />
         </label>
@@ -127,6 +136,7 @@ function Form({ onChangeInput, formImages, formImageProyect }) {
         <button onClick={handleSaveProject} className="button--large">
           Guardar proyecto
         </button>
+        <a href={dataApi}>Enlace a tu proyecto</a>
       </fieldset>
     </form>
   );

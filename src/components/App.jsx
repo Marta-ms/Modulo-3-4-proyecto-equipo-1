@@ -5,30 +5,24 @@ import Footer from "./Footer";
 import Main from "./Main";
 import imageUser from "../images/perfil-usuaria.jpg";
 import imageProject from "../images/Fondo-img.jpg";
-import postCardToApi from "../services/postCardToApi";
+// import postCardToApi from "../services/postCardToApi";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
     name: "",
     slogan: "",
-    repository: "",
+    repo: "",
     demo: "",
     technologies: "",
-    description: "",
-    nameUser: "",
-    nameJob: "",
-    photoAuthor: "",
-    photoProject: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: { imageProject },
+    photo: { imageUser },
   });
   console.log(formInfo);
 
-  const handleChangeInput = (
-    valueInput,
-    idInput,
-    idImages,
-    ImageAuthor,
-    ImageProjectValue
-  ) => {
+  const handleChangeInput = (valueInput, idInput) => {
     console.log(idInput, valueInput);
 
     if (idInput === "name") {
@@ -47,12 +41,14 @@ function App() {
       setFormInfo({ ...formInfo, repo: valueInput });
     } else if (idInput === "demo") {
       setFormInfo({ ...formInfo, demo: valueInput });
-    } else if (idImages === "photo") {
-      setFormInfo({ ...formInfo, photoAuthor: ImageAuthor });
+    } else if (idInput === "image") {
+      setFormInfo({ ...formInfo, image: valueInput });
+    } else if (idInput === "photo") {
+      setFormInfo({ ...formInfo, photo: valueInput });
     }
   };
   const handleChangeImageAuthor = (ImageAuthor, idImages) => {
-    console.log(ImageAuthor);
+    console.log(ImageAuthor, idImages);
     setFormImageAuthor(ImageAuthor);
   };
   const [formImageAuthor, setFormImageAuthor] = useState({
@@ -63,7 +59,24 @@ function App() {
     backgroundImage: `url($(imageProject))`,
   });
   const handleChangeProjectImage = (ImageProjectValue, idImages) => {
+    console.log(ImageProjectValue, idImages);
     setFormImageProject(ImageProjectValue);
+  };
+
+  const [dataApi, setDataApi] = useState("");
+  const postCardToApi = (formInfo) => {
+    return fetch("https://dev.adalab.es/api/projectCard", {
+      method: "POST",
+      body: JSON.stringify(formInfo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.cardURL);
+        setDataApi(data.cardURL);
+      });
   };
 
   return (
@@ -77,6 +90,8 @@ function App() {
           changeAuthorPhoto={formImageAuthor}
           formImageProyect={handleChangeProjectImage}
           changeProjectPhoto={formImageProject}
+          postCardToApi={postCardToApi}
+          dataApi={dataApi}
         />
         <Footer />
       </div>

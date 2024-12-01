@@ -8,6 +8,8 @@ function Main({
   changeAuthorPhoto,
   formImageProyect,
   changeProjectPhoto,
+  postCardToApi,
+  dataApi,
 }) {
   return (
     <main className="main">
@@ -29,6 +31,9 @@ function Main({
         onChangeInput={onChangeInput}
         formImages={formImages}
         formImageProyect={formImageProyect}
+        postCardToApi={postCardToApi}
+        formInfo={formInfo}
+        dataApi={dataApi}
       />
     </main>
   );
