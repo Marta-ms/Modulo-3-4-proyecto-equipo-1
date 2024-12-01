@@ -1,16 +1,19 @@
 const postCardToApi = () => {
-    return fetch("https://dev.adalab.es/api/projectCard", {
+    fetch("https://dev.adalab.es/api/projectCard", {
         method: "POST",
         body: JSON.stringify(formInfo),
         headers: {
-            'Content-Type': 'application/json'
-        }
+            "Content-Type": "application/json"
+        },
     })
-        .then(res => res.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+
+            //codigo con el que manejar/modificar data
 
 
         })
-}
+};
 
 export default postCardToApi;

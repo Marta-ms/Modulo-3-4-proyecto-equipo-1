@@ -6,6 +6,8 @@ import Main from "./Main";
 import imageUser from "../images/perfil-usuaria.jpg";
 import imageProject from "../images/Fondo-img.jpg";
 import postCardToApi from "../services/postCardToApi";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./Landing";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
@@ -68,18 +70,27 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <Header />
-        <Main
-          onChangeInput={handleChangeInput}
-          formInfo={formInfo}
-          formImages={handleChangeImageAuthor}
-          changeAuthorPhoto={formImageAuthor}
-          formImageProyect={handleChangeProjectImage}
-          changeProjectPhoto={formImageProject}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+
+        <Route
+          path="/home"
+          element={
+            <div className="container">
+              <Header />
+              <Main
+                onChangeInput={handleChangeInput}
+                formInfo={formInfo}
+                formImages={handleChangeImageAuthor}
+                changeAuthorPhoto={formImageAuthor}
+                formImageProyect={handleChangeProjectImage}
+                changeProjectPhoto={formImageProject}
+              />
+              <Footer />
+            </div>
+          }
         />
-        <Footer />
-      </div>
+      </Routes>
     </>
   );
 }
