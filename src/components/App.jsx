@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import Main from "./Main";
 import imageUser from "../images/perfil-usuaria.jpg";
 import imageProject from "../images/Fondo-img.jpg";
-// import postCardToApi from "../services/postCardToApi";
 
 function App() {
   const [formInfo, setFormInfo] = useState({
@@ -47,22 +46,6 @@ function App() {
       setFormInfo({ ...formInfo, photo: valueInput });
     }
   };
-
-  // const handleChangeImageAuthor = (ImageAuthor, idImages) => {
-  //   console.log(ImageAuthor, idImages);
-  //   setFormImageAuthor(ImageAuthor);
-  // };
-  // const [formImageAuthor, setFormImageAuthor] = useState({
-  //   backgroundImage: `url($(imageUser))`,
-  // });
-
-  // const [formImageProject, setFormImageProject] = useState({
-  //   backgroundImage: `url($(imageProject))`,
-  // });
-  // const handleChangeProjectImage = (ImageProjectValue, idImages) => {
-  //   console.log(ImageProjectValue, idImages);
-  //   setFormImageProject(ImageProjectValue);
-  // };
 
   const [dataApi, setDataApi] = useState("");
   const postCardToApi = (formInfo) => {
