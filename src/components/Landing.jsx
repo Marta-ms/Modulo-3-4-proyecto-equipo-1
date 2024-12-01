@@ -11,10 +11,12 @@ function Landing() {
           </h2>
         </header>
         <main>
-          <h3 className="message-landing">
-            Ayuda a Paquita Salas a presentar su proyecto para PS Management
-          </h3>
-          <Link to="/home">Empieza ahora!</Link>
+          <h3 className="message-landing">¿Quieres presentar tu proyecto?</h3>
+          <div>
+            <Link className="button-landing" to="/home">
+              Empieza ahora!
+            </Link>
+          </div>
         </main>
       </div>
     </>
